@@ -3,11 +3,12 @@
 
   <%= render 'shared/head' %>
 
-  <%= render 'shared/navbar' %>
-
   <body>
-  <main class="container">
-    <%= yield %>
-  </main>
+    <%= render 'shared/navbar' %>
+    <%= render 'devise/shared/flash/app' %>
+
+    <main class="container">
+      <%= yield %>
+    </main>
   </body>
 </html>
