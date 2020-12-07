@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.7.2'
 
+gem 'active_storage_validations'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7'
 gem 'jbuilder', '~> 2.7'
