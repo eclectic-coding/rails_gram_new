@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.7.2"
 
+gem "devise", "~> 4.7"
 gem "jbuilder", "~> 2.7"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
@@ -24,11 +25,11 @@ end
 group :development do
   gem "fuubar"
   gem "guard"
+  gem "guard-rspec"
+  gem "listen", "~> 3.2"
   gem "rubocop"
   gem "rubocop-rails", require: false
   gem "rubocop-rspec"
-  gem "guard-rspec"
-  gem "listen", "~> 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
