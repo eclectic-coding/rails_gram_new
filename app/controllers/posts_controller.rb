@@ -21,7 +21,11 @@ class PostsController < ApplicationController
 
   def edit; end
 
-  def destroy; end
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_path(@post.user.username), notice: "Post deleted"
+  end
 
   private
 
