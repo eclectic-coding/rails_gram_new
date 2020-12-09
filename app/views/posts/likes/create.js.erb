@@ -1,0 +1,3 @@
+var likesContainer = document.querySelector('[data-behavior="post_<%= @post.id %>_likes"]')
+
+likesContainer.innerHTML = "<%= escape_javascript(render partial: "posts/likes", locals: { post:@post }) %>"
