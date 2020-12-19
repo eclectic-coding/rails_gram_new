@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :posts do
-    resource :likes, only: %i[create destroy], module: :posts
+    resource :likes, only: [:create, :destroy], module: :posts
+    resources :comments, only: [:show, :create, :new, :destroy], module: :posts
   end
 
   resources :users, only: [:show], param: :username, path: '' do
