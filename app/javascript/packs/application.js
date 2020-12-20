@@ -18,3 +18,5 @@ import "../stylesheets/application.scss"
 // const imagePath = (name) => images(name, true)
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
+
+import "controllers"
