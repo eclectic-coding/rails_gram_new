@@ -10,7 +10,7 @@ module Posts
         # do stuff
         render partial: "posts/comments/comment", locals: { comment: @comment }
       else
-        render partial: 'posts/comments/error', locals: { comment: @comment }, status: :bad_request
+        render partial: "posts/comments/error", locals: { comment: @comment }, status: :bad_request
       end
     end
 
