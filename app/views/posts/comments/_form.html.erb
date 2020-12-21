@@ -4,7 +4,7 @@
   <%= form_with(model: [post, comment], html: {
     data: { type: "html", action: "ajax:success->comments-list#onPostSuccess ajax:error->comments-list#onPostError" } }) do |f| %>
     <%= f.text_area :body, class: "form-control", placeholder: "Say something nice.",
-                    data: { target: "comments-list.textarea" } %>
+                    data: { "comments-list-target": "textarea" } %>
     <div class="mt-3 d-flex justify-content-end">
       <%= f.submit "Post comment", data: { disable_with: "Posting..." }, class: "btn btn-primary btn-sm rounded" %>
     </div>
