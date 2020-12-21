@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.comments&.first&.user = current_user
 
     if @post.save
       redirect_to posts_path, notice: "Created Post"
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image)
+    params.require(:post).permit(:image, comments_attributes: [:body])
   end
 
 end

@@ -23,6 +23,11 @@
     </div>
   </div>
 
+  <%= f.fields_for :comments, f.object.comments.new do |comment_form| %>
+    <%= comment_form.label :body, "Comment"%>
+    <%= comment_form.text_area :body, class: "form-control", placeholder: "Start the discussion by talking about your photo"  %>
+  <% end %>
+
   <%= f.submit class: "btn btn-primary" %>
 
 <% end %>
