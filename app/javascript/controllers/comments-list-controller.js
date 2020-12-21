@@ -23,12 +23,10 @@ export default class extends Controller {
             },
             {
                 connected() {
-                    // Called when the subscription is ready for use on the server
                     console.log('connected')
                 },
 
                 disconnected() {
-                    // Called when the subscription has been terminated by the server
                     console.log('disconnected')
                 },
 
@@ -80,8 +78,21 @@ export default class extends Controller {
         }
 
         // this.newCommentErrorsTarget.innerHTML = xhr.response;
+        this.scrollToBottom();
         this.textareaTarget.value = "";
         this.newCommentErrorsTarget.innerHTML = "";
 
+    }
+
+    scrollToBottom() {
+        const lastComment = this.commentListTarget.children.item(
+            this.commentListTarget.children.length - 1
+        );
+
+        lastComment.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
+        });
     }
 }
