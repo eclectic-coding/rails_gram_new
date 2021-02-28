@@ -9,6 +9,10 @@
           <%= @user.username %>
           <%= link_to 'Edit', edit_user_registration_path, class: 'ml-3 btn btn-secondary btn-sm' if current_user.id == @user.id %>
         </h1>
+
+        <div class="ml-3" data-behavior="user_<%= @user.id %>_follow_button">
+          <%= render "users/follow_button", user: @user %>
+        </div>
       </div>
     </div>
   </div>
